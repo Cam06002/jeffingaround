@@ -1,4 +1,6 @@
+import { Tilt_Neon } from "next/font/google";
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -8,11 +10,34 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        Tilt_Neon: ["Tilt Neon", "sans-serif"],
       },
+      transitionProperty: {
+        'dropShadow': 'dropShadow',
+      },
+      dropShadow: {
+        DEFAULT: [
+          '-0.2rem -0.2rem 5rem #fff',
+          '0.2rem 0.2rem 5rem #fff',
+          '0 0 1rem #08f',
+          '0 0 2rem #08f'
+        ]
+      },
+      // keyframes: {
+      //   flicker: {
+      //     '0%, 15%, 19%, 48%, 60%, 100%': { 'drop-shadow': 
+      //       `-0.2rem -0.2rem 5rem #fff',
+      //       '0.2rem 0.2rem 5rem #fff',
+      //       '0 0 1rem #08f',
+      //       '0 0 2rem #08f`
+      //     },
+      //     '18%, 25%, 55%': {'drop-shadow': 'none'}
+      //   }
+      // },
+      // animation: {
+      //   flicker: 'flicker 1.4s infinite alternate'
+      // }
     },
   },
   plugins: [],
